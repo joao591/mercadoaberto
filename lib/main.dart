@@ -55,6 +55,7 @@ class _MyHomePageState extends State<MyHomePage> {
         actions: [
           Icon(Icons.shopping_bag_outlined)
         ],
+        bottom: Text("Enviar para: "),
       //  foregroundColor: Colors.black,
       ),
       body: Center(), 
