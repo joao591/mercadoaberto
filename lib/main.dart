@@ -7,13 +7,11 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        
         primarySwatch: Colors.blue,
       ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
@@ -35,11 +33,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void _incrementCounter() {
     setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
       _counter++;
     });
   }
@@ -47,18 +40,30 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: Icon(Icons.menu),
-        
-        title: Text("Mercado Livre"),
-        backgroundColor: Color(0xfff5d415),
-        actions: [
-          Icon(Icons.shopping_bag_outlined)
-        ],
-        bottom: Text("Enviar para: "),
-      //  foregroundColor: Colors.black,
-      ),
-      body: Center(), 
-    );
+        appBar: AppBar(
+            leading: Icon(Icons.menu),
+            title: Text("Mercado Livre"),
+            backgroundColor: Color(0xfff5d415),
+            actions: [Icon(Icons.shopping_bag_outlined)],
+            //foregroundColor: Colors.black,
+
+            bottom: const PreferredSize(
+              preferredSize: Size.fromHeight(10), //tamanho barra inferior
+              child: Text("Enviar para Juscelinho Cubisthcek"),
+            )),
+        body: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: <Color>[
+                  Color(0xfff5d415),
+                  Color(0xffff69b4),
+                  Color(0xfff5f5f5),
+                  Color(0xffff69b4),
+                  Color(0xfff5d415),
+                ]),
+          ),
+        ));
   }
 }
